@@ -59,7 +59,7 @@ export default function LoginForm({ formID = "loginForm" }: LoginFormProps) {
 
                     <button
                         type="submit"
-                        className="mt-4 font-body06 w-full py-3.5 bg-zinc-800 disabled:bg-transparent disabled:text-grey-700 text-white disabled:cursor-not-allowed hover:bg-key-100 cursor-pointer transition-colors rounded-xl"
+                        className="mt-4 font-body06 w-full py-3.5 bg-zinc-800 disabled:bg-transparent disabled:text-grey-700 text-white disabled:cursor-not-allowed hover:bg-zinc-700 cursor-pointer transition-colors rounded-xl"
                         disabled={!(isValid && dirty)}
                     >
                         로그인
