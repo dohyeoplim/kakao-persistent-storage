@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+:root {
+    @apply font-pretendard-variable bg-background;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+    font-family: "Pretendard Variable";
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: swap;
+    src: url("../shared/assets/fonts/PretendardVariable.woff2")
+        format("woff2-variations");
+}
+
+@theme {
+    --font-pretendard-variable: "Pretendard Variable", sans-serif;
+}
+
+@layer utilities {
+    .font-title01 {
+        @apply font-pretendard-variable font-bold leading-8 tracking-tight;
+        font-size: clamp(1.5rem, 1.2vw + 1.2rem, 1.875rem);
+    }
+
+    .font-title02 {
+        @apply font-pretendard-variable font-medium leading-8 tracking-tight;
+        font-size: clamp(1.5rem, 1.1vw + 1.1rem, 1.75rem);
+    }
+
+    .font-head01 {
+        @apply font-pretendard-variable font-semibold leading-7 tracking-tight;
+        font-size: clamp(1.25rem, 0.8vw + 1rem, 1.375rem);
+    }
+
+    .font-head02 {
+        @apply font-pretendard-variable font-medium leading-7 tracking-tight;
+        font-size: clamp(1.25rem, 0.8vw + 1rem, 1.375rem);
+    }
+
+    .font-body01 {
+        @apply font-pretendard-variable font-semibold leading-6 tracking-tight;
+        font-size: clamp(1.125rem, 0.6vw + 0.9rem, 1.25rem);
+    }
+
+    .font-body02 {
+        @apply font-pretendard-variable font-medium leading-6 tracking-tight;
+        font-size: clamp(1.125rem, 0.6vw + 0.9rem, 1.1875rem);
+    }
+
+    .font-body03 {
+        @apply font-pretendard-variable font-semibold leading-6 tracking-tight;
+        font-size: clamp(1rem, 0.5vw + 0.85rem, 1.125rem);
+    }
+
+    .font-body04 {
+        @apply font-pretendard-variable font-medium leading-6 tracking-tight;
+        font-size: clamp(1rem, 0.5vw + 0.85rem, 1.0625rem);
+    }
+
+    .font-body05 {
+        @apply font-pretendard-variable font-semibold leading-5 tracking-tight;
+        font-size: clamp(0.875rem, 0.4vw + 0.7rem, 1rem);
+    }
+
+    .font-body06 {
+        @apply font-pretendard-variable font-medium leading-5 tracking-tight;
+        font-size: clamp(0.875rem, 0.35vw + 0.7rem, 0.9375rem);
+    }
+
+    .font-caption01 {
+        @apply font-pretendard-variable font-semibold leading-3 tracking-normal;
+        font-size: clamp(0.75rem, 0.25vw + 0.68rem, 0.8125rem);
+    }
+
+    .font-caption02 {
+        @apply font-pretendard-variable font-medium leading-3 tracking-normal;
+        font-size: clamp(0.75rem, 0.2vw + 0.68rem, 0.8rem);
+    }
+
+    .font-caption03 {
+        @apply font-pretendard-variable font-normal leading-3 tracking-normal;
+        font-size: clamp(0.75rem, 0.2vw + 0.68rem, 0.8rem);
+    }
+}
+
+@theme {
+    --color-background: #f6f6f6;
+    --color-light-surface: #f9f9f9;
+    --color-danger-red: #e5484d;
+    --color-safe-blue: #4174ea;
+    --color-white: rgba(255, 255, 255, 1);
+    --color-grey-900: rgba(36, 37, 42, 1);
+    --color-grey-800: rgba(63, 65, 72, 1);
+    --color-grey-700: rgba(118, 121, 132, 1);
+    --color-grey-500: rgba(158, 164, 180, 1);
+    --color-grey-300: rgba(198, 200, 209, 1);
+    --color-grey-200: rgba(219, 221, 226, 1);
+    --color-grey-100: rgba(236, 237, 239, 1);
+    --color-key-primary: rgba(26, 83, 25, 1);
+    --color-key-300: rgba(140, 169, 140, 1);
+    --color-key-100: rgba(232, 238, 232, 1);
+    --color-key-50: rgba(243, 247, 243, 1);
+}
+
+@layer utilities {
+    .card-designed {
+        @apply bg-light-surface border-[0.5px] border-grey-100 rounded-[20px];
+    }
+
+    .full-bleed {
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+}
+
+.recharts-wrapper:focus,
+.recharts-surface:focus,
+.recharts-container:focus,
+.recharts-responsive-container:focus,
+svg:focus {
+    outline: none !important;
+}
