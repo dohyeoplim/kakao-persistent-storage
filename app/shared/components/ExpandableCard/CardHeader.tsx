@@ -1,11 +1,8 @@
 import { ChevronRight } from "lucide-react";
-import type { ExpandableCardTheme } from "./types";
 
 type CardHeaderProps = {
     title?: string | React.ReactNode;
     description?: string | React.ReactNode;
-    cardTheme?: ExpandableCardTheme;
-    includeIndicator?: boolean;
     isExpandable?: boolean;
     expanded?: boolean;
     onToggle?: () => void;
@@ -14,8 +11,6 @@ type CardHeaderProps = {
 export function CardHeader({
     title,
     description,
-    cardTheme,
-    includeIndicator,
     isExpandable,
     expanded,
     onToggle,
@@ -31,12 +26,6 @@ export function CardHeader({
             }}
         >
             <div className="flex items-center gap-1.5">
-                {cardTheme && cardTheme != "plain" && includeIndicator && (
-                    <img
-                        src={`${import.meta.env.BASE_URL}sig=${cardTheme}.png`}
-                        className="h-20"
-                    />
-                )}
                 <div className="flex flex-col gap-1">
                     {title && (
                         <h2 className="truncate font-body03 text-grey-900">

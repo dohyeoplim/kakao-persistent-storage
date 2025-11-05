@@ -1,6 +1,5 @@
 import type { ExpandableCardProps } from "./types";
 import { useCollapsible } from "@/shared/hooks/useCollapsible";
-import { expandableCardThemes } from "./theme";
 import { CardHeader } from "./CardHeader";
 import { motion } from "motion/react";
 import { SMOOOTH } from "@/styles/transitions";
@@ -8,8 +7,6 @@ import { SMOOOTH } from "@/styles/transitions";
 export default function ExpandableCard({
     cardTitle,
     cardDescription,
-    cardTheme = "plain",
-    includeIndicator = false,
     isExpandable = false,
     defaultExpanded = false,
     expanded: expandedProp,
@@ -27,15 +24,11 @@ export default function ExpandableCard({
         <motion.div
             layout
             transition={SMOOOTH}
-            className={`card-designed ${expandableCardThemes[cardTheme]} ${
-                className ?? ""
-            }`}
+            className={`card-designed ${className ?? ""}`}
         >
             <CardHeader
                 title={cardTitle}
                 description={cardDescription}
-                cardTheme={cardTheme}
-                includeIndicator={includeIndicator}
                 isExpandable={isExpandable}
                 expanded={expanded}
                 onToggle={toggle}
