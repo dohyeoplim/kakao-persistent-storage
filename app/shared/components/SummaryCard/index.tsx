@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import type { SummaryCardProps } from "./types";
 import { ChevronDown, ChevronUp } from "lucide-react";

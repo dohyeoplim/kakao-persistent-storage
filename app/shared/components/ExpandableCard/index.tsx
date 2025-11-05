@@ -1,3 +1,5 @@
+"use client";
+
 import type { ExpandableCardProps } from "./types";
 import { useCollapsible } from "@/shared/hooks/useCollapsible";
 import { CardHeader } from "./CardHeader";

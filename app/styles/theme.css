@@ -121,6 +121,10 @@ http://scripts.sil.org/OFL
         @apply bg-light-surface border-[0.5px] border-grey-100 rounded-[20px];
     }
 
+    .card-designed-clear {
+        @apply bg-transparent border-[0.5px] border-grey-100 rounded-[20px];
+    }
+
     .full-bleed {
         position: relative;
         width: 100vw;

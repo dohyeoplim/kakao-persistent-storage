@@ -4,11 +4,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import TextInput from "@/shared/components/FormComponents/TextInput";
 import PhoneNumberInput from "@/shared/components/FormComponents/PhoneNumberInput";
-
-type LoginFormProps = {
-    formID?: string;
-    afterSubmit?: () => void;
-};
+import { login } from "@/lib/session";
 
 const LoginFormSchema = Yup.object().shape({
     name: Yup.string().required("이름을 입력해주세요."),
@@ -17,32 +13,22 @@ const LoginFormSchema = Yup.object().shape({
         .required("전화번호를 입력해주세요."),
 });
 
-export default function LoginForm({ formID = "loginForm" }: LoginFormProps) {
-    // const { signIn } = useSession();
-
+export default function LoginForm() {
     return (
         <Formik
             initialValues={{ name: "", phoneNumber: "" }}
             validationSchema={LoginFormSchema}
-            // onSubmit={async (_values, actions) => {
-            //     try {
-            //         await
-            //     } catch (err: any) {
-            //         alert(err);
-            //     }
-            //     actions.setSubmitting(false);
-            // }}
             onSubmit={async (values, actions) => {
-                alert(JSON.stringify(values));
+                try {
+                    await login(values.name, values.phoneNumber);
+                } catch (err: any) {
+                    alert(err);
+                }
                 actions.setSubmitting(false);
             }}
         >
             {({ handleSubmit, isValid, dirty }) => (
-                <form
-                    id={formID}
-                    onSubmit={handleSubmit}
-                    className="flex flex-col"
-                >
+                <form onSubmit={handleSubmit} className="w-full flex flex-col">
                     <TextInput
                         id="name"
                         name="name"
@@ -59,8 +45,8 @@ export default function LoginForm({ formID = "loginForm" }: LoginFormProps) {
 
                     <button
                         type="submit"
-                        className="mt-4 font-body06 w-full py-3.5 bg-zinc-800 disabled:bg-transparent disabled:text-grey-700 text-white disabled:cursor-not-allowed hover:bg-zinc-700 cursor-pointer transition-colors rounded-xl"
                         disabled={!(isValid && dirty)}
+                        className="mt-4 font-body06 w-full py-3.5 bg-zinc-800 disabled:bg-zinc-200/50 text-white disabled:text-zinc-400 disabled:cursor-not-allowed cursor-pointer transition-colors rounded-[20px]"
                     >
                         로그인
                     </button>

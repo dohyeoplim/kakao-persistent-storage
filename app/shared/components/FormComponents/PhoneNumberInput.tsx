@@ -56,8 +56,8 @@ export default function PhoneNumberInput({
                             onChange={phoneNumberFilter}
                             maxLength={13}
                             className={cn(
-                                "font-body04 w-full rounded-lg border-[0.3px] border-grey-700 px-4 py-3.5 transition-all duration-200 outline-none",
-                                "focus:ring ring-key-primary focus:border-key-primary",
+                                "font-body04 w-full rounded-[20px] border-[0.3px] border-grey-500 px-4 py-3.5 transition-all duration-200 outline-none",
+                                "focus:ring ring-grey-700",
                                 "placeholder:text-grey-700",
                                 "appearance-none [-webkit-appearance:none] [-moz-appearance:none]",
                                 error &&
