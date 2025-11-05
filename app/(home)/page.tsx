@@ -1,7 +1,6 @@
-import { getSession, getUser, logout } from "@/lib/session";
+import { getSession, logout } from "@/lib/session";
 import LoginForm from "./components/LoginForm";
 import Button from "@/shared/components/Button";
-import SummaryCard from "@/shared/components/SummaryCard";
 import ExpandableCard from "@/shared/components/ExpandableCard";
 import { formatJwtExpiration } from "@/shared/utils/formatJWTExpiration";
 
