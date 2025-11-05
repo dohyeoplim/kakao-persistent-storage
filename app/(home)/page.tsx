@@ -9,8 +9,8 @@ export default async function Home() {
     const session = await getSession();
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-zinc-50">
-            <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-start gap-6 py-32 px-8 bg-background">
+        <div className="flex min-h-screen items-center justify-center bg-background">
+            <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-start gap-6 py-32 px-8">
                 <div className="w-full flex flex-col items-center gap-5 text-center">
                     <h1 className="font-title01 text-grey-900">
                         Browser Storage Tests
